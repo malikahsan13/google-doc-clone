@@ -8,6 +8,6 @@ trait TruncateTable
 {
     protected function truncate($table)
     {
-        DB::table("users")->truncate();
+        DB::table($table)->truncate();
     }
 }

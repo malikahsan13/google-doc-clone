@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
     {
         $this->disableForeignKey();
         $this->truncate("users");
-        \App\Models\User::factory(10)->create();
+        $users = \App\Models\User::factory(10)->create();
         $this->enableForeignKey();
     }
 }
