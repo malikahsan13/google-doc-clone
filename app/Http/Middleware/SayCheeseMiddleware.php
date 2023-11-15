@@ -15,7 +15,7 @@ class SayCheeseMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        dump("SAY CHEESE");
+        //dump("SAY CHEESE");
         return $next($request);
         // return response()->json([
         //     "data" => "Success"
@@ -23,6 +23,6 @@ class SayCheeseMiddleware
     }
 
     public function terminate($request, $response){
-        dump("BYE FROM CHEESE");
+        //dump("BYE FROM CHEESE");
     }
 }
