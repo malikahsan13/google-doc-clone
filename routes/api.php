@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\Routes\RoutesHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,18 +19,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::resource("/users", "\App\Http\Controllers\UserController");
+Route::prefix("v1")
+    ->group(function() {
+        RoutesHelper::includeRouteFiles(__DIR__."/api/v1");
+//        require(__DIR__ . "/api/v1/users.php");
+//        require(__DIR__ . "/api/v1/posts.php");
+//        require(__DIR__ . "/api/v1/comments.php");
+    });
 
-// this will remove create and edit route it will only show api related routes
-//Route::apiResource("/users","\App\Http\Controllers\UserController");
 
 
-Route::get("/users", [\App\Http\Controllers\UserController::class, "index"]);
-
-Route::get("/users/{user}", [\App\Http\Controllers\UserController::class, "show"]);
-
-Route::post("/users", [\App\Http\Controllers\UserController::class, "store"]);
-
-Route::patch("/users/{user}", [\App\Http\Controllers\UserController::class, "update"]);
-
-Route::delete("/users/{user}", [\App\Http\Controllers\UserController::class, "destroy"]);
