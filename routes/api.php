@@ -27,5 +27,40 @@ Route::prefix("v1")
 //        require(__DIR__ . "/api/v1/comments.php");
     });
 
+/** method syntax for routes */
+//Route::middleware("auth")
+//    ->prefix("users")
+//    ->name("heya")
+//    ->namespace("\App\Http\Controllers")
+//    ->group(function(){
+//        Route::get("/users", "UserController@index") ->name("index");
+//
+//        Route::get("/users/{user}", [\App\Http\Controllers\UserController::class, "show"]);
+//
+//        Route::post("/users", [\App\Http\Controllers\UserController::class, "store"]);
+//
+//        Route::patch("/users/{user}", [\App\Http\Controllers\UserController::class, "update"]);
+//
+//        Route::delete("/users/{user}", [\App\Http\Controllers\UserController::class, "destroy"]);
+//    });
+
+
+/** Array form of using routes */
+//Route::group([
+//    "middleware" => ['auth'],
+//    "prefix" => "users",
+//    "as" => "heya",
+//    "namespace" => "\App\Http\Controllers"
+//],function(){
+//    Route::get("/users", "UserController@index") ->name("index");
+//
+//    Route::get("/users/{user}", [\App\Http\Controllers\UserController::class, "show"]);
+//
+//    Route::post("/users", [\App\Http\Controllers\UserController::class, "store"]);
+//
+//    Route::patch("/users/{user}", [\App\Http\Controllers\UserController::class, "update"]);
+//
+//    Route::delete("/users/{user}", [\App\Http\Controllers\UserController::class, "destroy"]);
+//});
 
 
